@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="JSPictureViewerStyle.css">
+<script src="JSPictureViewer.js"></script>
+<script type="text/javascript">
+    MAX_PHOTOS_ARCHIVES = 10;
+    //Get the list of pictures according to the webiste topology
+    function getPictures () {
+        images = [];
+        for(var i=1; i <= MAX_PHOTOS_ARCHIVES ; i++) {
+			image = {};
+			image['url'] = "img_" + 1 + ".jpg";
+			images.push(image);
+        }
+        return images;
+    }
+    function displayPictures() {
+        JSPVgenerateMosaic(document.getElementById("workspace"), getPictures(), 0, MAX_PHOTOS_ARCHIVES);
+    }
+</script>
+
+</head>
+<body onload="displayPictures()">
+<h1>Title</h1> 
+<div id="workspace"/>
+</body>
+</html> 
